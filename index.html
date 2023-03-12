@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 
 <html>
-<html lang="en"> 
-
- <head> 
-
-         <meta charset="UTF-8"> 
-
-         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body>
-
-<h1>Hello World</h1>
-
-<p>I'm hosted with GitHub Pages.</p>
-<p>Test Page </p>
-
-</body>
+<html lang="en">
 
 </html>
+---
+layout: default
+---
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+      <a class="navbar-brand" href="{{ site.url }}">{{ site.title }}</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                    </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                              <ul class="navbar-nav ml-auto">
+                                      {% for page in site.header_pages %}
+                                              <li class="nav-item {% if page.url == page.url | absolute_url %}active{% endif %}">
+                                                        <a class="nav-link" href="{{ page.url | absolute_url }}">{{ page.title }}</a>
+                                                                </li>
+                                                                        {% endfor %}
+                                                                              </ul>
+                                                                                  </div>
+                                                                                    </div>
+                                                                                    </nav>
+
+                                                                                    <!-- Header -->
+                                                                                    <header class="bg-dark text-white">
+                                                                                      <div class="container text-center">
+                                                                                          <h1>{{ site.title }}</h1>
+                                                                                              <p class="lead">{{ site.description }}</p>
+                                                                                                </div>
+                                                                                                </header>
+
+                                                                                                <!-- Main Content -->
+                                                                                                <main class="container my-5">
+                                                                                                  <h2 class="text-center mb-5">Welcome to my GitHub Pages site!</h2>
+                                                                                                    <p>Here, you'll find all sorts of interesting content related to my programming projects, tutorials, and musings on technology and coding.</p>
+                                                                                                      <p>Use the navigation menu above to explore the site and learn more about me and my work.</p>
+                                                                                                      </main>
+
